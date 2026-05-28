@@ -36,136 +36,67 @@
   }
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; }
-  body {
-    font-family: 'Sarabun', sans-serif;
-    background: var(--gray-50);
-    color: var(--gray-800);
-    min-height: 100vh;
-    font-size: 15px;
-    line-height: 1.6;
-  }
+  body { font-family: 'Sarabun', sans-serif; background: var(--gray-50); color: var(--gray-800); min-height: 100vh; font-size: 15px; line-height: 1.6; }
 
-  /* ======= SCREENS ======= */
+  /* SCREENS */
   .screen { display: none; min-height: 100vh; }
 
-  /* ======= LOGIN SCREEN ======= */
+  /* LOGIN */
   #screen-login {
     background: linear-gradient(145deg, var(--navy) 0%, var(--navy-mid) 50%, #0a1628 100%);
     align-items: center; justify-content: center; flex-direction: column;
     position: relative; overflow: hidden;
   }
-  .login-bg-pattern {
-    position: absolute; inset: 0; opacity: 0.04;
-    background-image: repeating-linear-gradient(45deg, var(--gold) 0, var(--gold) 1px, transparent 0, transparent 50%);
-    background-size: 30px 30px;
-  }
-  .login-box {
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(201,168,76,0.3);
-    border-radius: var(--radius-lg);
-    padding: 48px 52px;
-    width: 100%; max-width: 440px;
-    backdrop-filter: blur(12px);
-    position: relative; z-index: 1;
-    box-shadow: 0 20px 60px rgba(0,0,0,0.4);
-    animation: loginFadeIn 0.6s ease;
-  }
+  .login-bg-pattern { position: absolute; inset: 0; opacity: 0.04; background-image: repeating-linear-gradient(45deg, var(--gold) 0, var(--gold) 1px, transparent 0, transparent 50%); background-size: 30px 30px; }
+  .login-box { background: rgba(255,255,255,0.04); border: 1px solid rgba(201,168,76,0.3); border-radius: var(--radius-lg); padding: 48px 52px; width: 100%; max-width: 440px; backdrop-filter: blur(12px); position: relative; z-index: 1; box-shadow: 0 20px 60px rgba(0,0,0,0.4); animation: loginFadeIn 0.6s ease; }
   @keyframes loginFadeIn { from { opacity:0; transform: translateY(24px); } to { opacity:1; transform: none; } }
-  .login-emblem {
-    text-align: center; margin-bottom: 32px;
-  }
+  .login-emblem { text-align: center; margin-bottom: 32px; }
   .login-emblem .icon { font-size: 52px; display: block; margin-bottom: 12px; }
-  .login-emblem h1 {
-    font-family: 'Chakra Petch', sans-serif;
-    color: var(--gold-light); font-size: 22px; font-weight: 700;
-    letter-spacing: 0.04em; line-height: 1.3;
-  }
+  .login-emblem h1 { font-family: 'Chakra Petch', sans-serif; color: var(--gold-light); font-size: 22px; font-weight: 700; letter-spacing: 0.04em; line-height: 1.3; }
   .login-emblem p { color: rgba(255,255,255,0.5); font-size: 13px; margin-top: 6px; }
-  .login-divider {
-    height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent);
-    margin: 24px 0;
-  }
+  .login-divider { height: 1px; background: linear-gradient(90deg, transparent, var(--gold), transparent); margin: 24px 0; }
   .form-group { margin-bottom: 18px; }
   .form-label { display: block; color: rgba(255,255,255,0.7); font-size: 13px; margin-bottom: 7px; font-weight: 500; }
-  .form-input {
-    width: 100%; padding: 12px 16px;
-    background: rgba(255,255,255,0.07); border: 1px solid rgba(201,168,76,0.25);
-    border-radius: var(--radius); color: white; font-family: 'Sarabun', sans-serif; font-size: 15px;
-    transition: all 0.2s;
-    outline: none;
-  }
+  .form-input { width: 100%; padding: 12px 16px; background: rgba(255,255,255,0.07); border: 1px solid rgba(201,168,76,0.25); border-radius: var(--radius); color: white; font-family: 'Sarabun', sans-serif; font-size: 15px; transition: all 0.2s; outline: none; }
   .form-input::placeholder { color: rgba(255,255,255,0.3); }
   .form-input:focus { border-color: var(--gold); background: rgba(255,255,255,0.1); box-shadow: 0 0 0 3px rgba(201,168,76,0.15); }
-  .btn-primary {
-    width: 100%; padding: 13px;
-    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
-    border: none; border-radius: var(--radius); color: var(--navy); font-family: 'Sarabun', sans-serif;
-    font-size: 16px; font-weight: 700; cursor: pointer; transition: all 0.2s; letter-spacing: 0.02em;
-  }
+  .btn-primary { width: 100%; padding: 13px; background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%); border: none; border-radius: var(--radius); color: var(--navy); font-family: 'Sarabun', sans-serif; font-size: 16px; font-weight: 700; cursor: pointer; transition: all 0.2s; letter-spacing: 0.02em; }
   .btn-primary:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(201,168,76,0.4); }
-  .btn-primary:active { transform: none; }
   .login-switch { text-align: center; margin-top: 18px; }
   .login-switch a { color: var(--gold-light); font-size: 13px; cursor: pointer; text-decoration: none; }
   .login-switch a:hover { text-decoration: underline; }
   .login-error { background: rgba(184,41,58,0.2); border: 1px solid rgba(184,41,58,0.4); border-radius: 8px; padding: 10px 14px; color: #ff8a95; font-size: 13px; margin-bottom: 14px; display: none; }
 
-  /* ======= APP LAYOUT ======= */
+  /* APP LAYOUT */
   #screen-app { flex-direction: column; background: var(--gray-50); }
 
   /* HEADER */
-  .app-header {
-    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%);
-    padding: 0 28px; height: 62px;
-    display: flex; align-items: center; justify-content: space-between;
-    box-shadow: 0 3px 16px rgba(13,27,62,0.3); position: sticky; top: 0; z-index: 100;
-  }
+  .app-header { background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%); padding: 0 28px; height: 62px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 3px 16px rgba(13,27,62,0.3); position: sticky; top: 0; z-index: 100; }
   .header-brand { display: flex; align-items: center; gap: 12px; }
   .header-brand .brand-icon { font-size: 24px; }
   .header-brand .brand-text { font-family: 'Chakra Petch', sans-serif; color: var(--gold-light); font-size: 16px; font-weight: 600; }
   .header-user { display: flex; align-items: center; gap: 12px; }
-  .user-badge {
-    display: flex; align-items: center; gap: 8px;
-    background: rgba(255,255,255,0.08); border: 1px solid rgba(201,168,76,0.25);
-    border-radius: 24px; padding: 5px 14px 5px 10px;
-  }
-  .user-avatar {
-    width: 28px; height: 28px; border-radius: 50%;
-    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
-    display: flex; align-items: center; justify-content: center;
-    color: var(--navy); font-size: 12px; font-weight: 700;
-  }
+  .user-badge { display: flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.08); border: 1px solid rgba(201,168,76,0.25); border-radius: 24px; padding: 5px 14px 5px 10px; }
+  .user-avatar { width: 28px; height: 28px; border-radius: 50%; background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%); display: flex; align-items: center; justify-content: center; color: var(--navy); font-size: 12px; font-weight: 700; }
   .user-name { color: white; font-size: 13px; font-weight: 500; }
-  .user-role-tag {
-    font-size: 10px; padding: 2px 7px; border-radius: 10px; font-weight: 600;
-    background: linear-gradient(135deg, var(--gold), var(--gold-light));
-    color: var(--navy);
-  }
-  .btn-logout {
-    background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15);
-    color: rgba(255,255,255,0.7); border-radius: 8px; padding: 5px 12px;
-    font-family: 'Sarabun', sans-serif; font-size: 13px; cursor: pointer; transition: all 0.2s;
-  }
+  .user-role-tag { font-size: 10px; padding: 2px 7px; border-radius: 10px; font-weight: 600; background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: var(--navy); max-width: 140px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+  /* ONLINE INDICATOR */
+  .online-dot { width: 8px; height: 8px; background: #4ade80; border-radius: 50%; border: 2px solid var(--navy-mid); animation: pulse-online 2s infinite; flex-shrink: 0; }
+  @keyframes pulse-online { 0%,100%{opacity:1} 50%{opacity:0.5} }
+
+  .btn-logout { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); color: rgba(255,255,255,0.7); border-radius: 8px; padding: 5px 12px; font-family: 'Sarabun', sans-serif; font-size: 13px; cursor: pointer; transition: all 0.2s; }
   .btn-logout:hover { background: rgba(255,255,255,0.14); color: white; }
 
   /* NAV */
-  .app-nav {
-    background: var(--white); border-bottom: var(--border);
-    padding: 0 28px; display: flex; gap: 0;
-    box-shadow: var(--shadow-sm);
-  }
-  .nav-btn {
-    padding: 14px 20px; background: none; border: none; border-bottom: 3px solid transparent;
-    color: var(--gray-400); font-family: 'Sarabun', sans-serif; font-size: 14px; font-weight: 600;
-    cursor: pointer; transition: all 0.2s; display: flex; align-items: center; gap: 7px;
-    white-space: nowrap;
-  }
+  .app-nav { background: var(--white); border-bottom: var(--border); padding: 0 28px; display: flex; gap: 0; box-shadow: var(--shadow-sm); position: relative; }
+  .nav-btn { padding: 14px 20px; background: none; border: none; border-bottom: 3px solid transparent; color: var(--gray-400); font-family: 'Sarabun', sans-serif; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.2s; display: flex; align-items: center; gap: 7px; white-space: nowrap; position: relative; }
   .nav-btn:hover { color: var(--navy-light); }
   .nav-btn.active { color: var(--navy); border-bottom-color: var(--gold); }
+  .nav-notif { position: absolute; top: 8px; right: 4px; background: var(--red); color: white; font-size: 9px; font-weight: 700; border-radius: 10px; padding: 1px 5px; min-width: 16px; text-align: center; }
 
   /* CONTENT */
   .app-content { flex: 1; padding: 28px; max-width: 960px; width: 100%; margin: 0 auto; }
-
-  /* PAGES */
   .page { display: none; }
   .page.active { display: block; animation: pageFade 0.3s ease; }
   @keyframes pageFade { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
@@ -176,15 +107,8 @@
   .page-subtitle { color: var(--gray-400); font-size: 13px; margin-top: 3px; }
 
   /* BUTTONS */
-  .btn {
-    padding: 9px 18px; border-radius: var(--radius); font-family: 'Sarabun', sans-serif;
-    font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.2s;
-    border: none; display: inline-flex; align-items: center; gap: 6px;
-  }
-  .btn-gold {
-    background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%);
-    color: var(--navy); box-shadow: 0 2px 8px rgba(201,168,76,0.3);
-  }
+  .btn { padding: 9px 18px; border-radius: var(--radius); font-family: 'Sarabun', sans-serif; font-size: 14px; font-weight: 600; cursor: pointer; transition: all 0.2s; border: none; display: inline-flex; align-items: center; gap: 6px; }
+  .btn-gold { background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 100%); color: var(--navy); box-shadow: 0 2px 8px rgba(201,168,76,0.3); }
   .btn-gold:hover { transform: translateY(-1px); box-shadow: 0 4px 14px rgba(201,168,76,0.4); }
   .btn-navy { background: var(--navy); color: var(--white); }
   .btn-navy:hover { background: var(--navy-light); }
@@ -192,38 +116,21 @@
   .btn-outline:hover { border-color: var(--navy-light); color: var(--navy); }
   .btn-danger { background: var(--red-light); color: var(--red); border: 1px solid #f5c0c6; }
   .btn-danger:hover { background: var(--red); color: white; }
+  .btn-green { background: var(--green-light); color: var(--green); border: 1px solid #a8d8bc; }
+  .btn-green:hover { background: var(--green); color: white; }
   .btn-sm { padding: 5px 12px; font-size: 13px; }
   .btn-xs { padding: 3px 9px; font-size: 12px; border-radius: 6px; }
 
   /* CARD */
-  .card {
-    background: var(--white); border-radius: var(--radius-lg);
-    border: var(--border); box-shadow: var(--shadow-sm); overflow: hidden;
-  }
-  .card-header {
-    padding: 18px 24px; border-bottom: var(--border);
-    display: flex; align-items: center; justify-content: space-between;
-    background: linear-gradient(135deg, #fcfbf8 0%, var(--white) 100%);
-  }
+  .card { background: var(--white); border-radius: var(--radius-lg); border: var(--border); box-shadow: var(--shadow-sm); overflow: hidden; }
+  .card-header { padding: 18px 24px; border-bottom: var(--border); display: flex; align-items: center; justify-content: space-between; background: linear-gradient(135deg, #fcfbf8 0%, var(--white) 100%); }
   .card-body { padding: 24px; }
 
   /* SCHEDULE POSTS */
-  .post-card {
-    background: var(--white); border-radius: var(--radius-lg); border: var(--border);
-    box-shadow: var(--shadow-sm); margin-bottom: 18px; overflow: hidden;
-    transition: box-shadow 0.2s;
-  }
+  .post-card { background: var(--white); border-radius: var(--radius-lg); border: var(--border); box-shadow: var(--shadow-sm); margin-bottom: 18px; overflow: hidden; transition: box-shadow 0.2s; }
   .post-card:hover { box-shadow: var(--shadow-md); }
-  .post-header {
-    padding: 20px 24px 16px;
-    border-bottom: 1px solid var(--gray-100);
-    display: flex; justify-content: space-between; align-items: flex-start;
-  }
-  .post-category-badge {
-    display: inline-flex; align-items: center; gap: 5px;
-    font-size: 11px; font-weight: 700; letter-spacing: 0.05em;
-    padding: 3px 10px; border-radius: 20px; margin-bottom: 8px;
-  }
+  .post-header { padding: 20px 24px 16px; border-bottom: 1px solid var(--gray-100); display: flex; justify-content: space-between; align-items: flex-start; }
+  .post-category-badge { display: inline-flex; align-items: center; gap: 5px; font-size: 11px; font-weight: 700; letter-spacing: 0.05em; padding: 3px 10px; border-radius: 20px; margin-bottom: 8px; }
   .badge-meeting { background: #e8edf8; color: var(--navy); }
   .badge-event { background: var(--amber-light); color: var(--amber); }
   .badge-document { background: var(--green-light); color: var(--green); }
@@ -231,21 +138,16 @@
   .post-title { font-size: 17px; font-weight: 700; color: var(--navy); line-height: 1.4; flex: 1; }
   .post-meta { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 10px; }
   .post-meta-item { display: flex; align-items: center; gap: 5px; color: var(--gray-600); font-size: 13px; }
-  .post-meta-item .icon { font-size: 14px; }
   .post-body { padding: 16px 24px; }
   .post-desc { color: var(--gray-600); font-size: 14px; line-height: 1.7; }
   .post-footer { padding: 14px 24px; background: var(--gray-50); border-top: 1px solid var(--gray-100); }
   .post-author { color: var(--gray-400); font-size: 12px; }
 
-  /* VOTE SECTION */
+  /* VOTE */
   .vote-section { padding: 16px 24px; border-top: 1px solid var(--gray-100); }
   .vote-title { font-size: 13px; font-weight: 700; color: var(--gray-600); margin-bottom: 12px; text-transform: uppercase; letter-spacing: 0.05em; }
   .vote-btns { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 14px; }
-  .vote-btn {
-    padding: 8px 18px; border-radius: 24px; border: 2px solid; cursor: pointer;
-    font-family: 'Sarabun', sans-serif; font-size: 14px; font-weight: 600;
-    transition: all 0.2s; background: var(--white);
-  }
+  .vote-btn { padding: 8px 18px; border-radius: 24px; border: 2px solid; cursor: pointer; font-family: 'Sarabun', sans-serif; font-size: 14px; font-weight: 600; transition: all 0.2s; background: var(--white); }
   .vote-btn.approve { border-color: var(--green); color: var(--green); }
   .vote-btn.approve:hover, .vote-btn.approve.selected { background: var(--green); color: white; }
   .vote-btn.reject { border-color: var(--red); color: var(--red); }
@@ -261,199 +163,164 @@
   .vote-progress-bar { height: 100%; transition: width 0.4s ease; }
   .vote-names { font-size: 12px; color: var(--gray-400); margin-top: 6px; }
 
-  /* COMMENT SECTION */
+  /* COMMENT */
   .comment-section { padding: 16px 24px; border-top: 1px solid var(--gray-100); }
   .comment-list { margin-bottom: 14px; }
-  .comment-item {
-    background: var(--gray-50); border-radius: 10px; padding: 12px 14px;
-    margin-bottom: 8px; display: flex; gap: 10px;
-  }
-  .comment-avatar {
-    width: 30px; height: 30px; border-radius: 50%; flex-shrink: 0;
-    background: linear-gradient(135deg, var(--navy-light), var(--navy));
-    display: flex; align-items: center; justify-content: center;
-    color: var(--gold-light); font-size: 11px; font-weight: 700;
-  }
+  .comment-item { background: var(--gray-50); border-radius: 10px; padding: 12px 14px; margin-bottom: 8px; display: flex; gap: 10px; }
+  .comment-avatar { width: 30px; height: 30px; border-radius: 50%; flex-shrink: 0; background: linear-gradient(135deg, var(--navy-light), var(--navy)); display: flex; align-items: center; justify-content: center; color: var(--gold-light); font-size: 11px; font-weight: 700; }
   .comment-body { flex: 1; }
   .comment-author { font-size: 12px; font-weight: 700; color: var(--navy); margin-bottom: 3px; }
   .comment-text { font-size: 13px; color: var(--gray-600); }
   .comment-time { font-size: 11px; color: var(--gray-400); margin-top: 4px; }
   .comment-input-row { display: flex; gap: 10px; }
-  .comment-input {
-    flex: 1; padding: 10px 14px; border: var(--border); border-radius: 24px;
-    font-family: 'Sarabun', sans-serif; font-size: 14px; outline: none;
-    transition: border-color 0.2s; background: var(--white);
-  }
+  .comment-input { flex: 1; padding: 10px 14px; border: var(--border); border-radius: 24px; font-family: 'Sarabun', sans-serif; font-size: 14px; outline: none; transition: border-color 0.2s; background: var(--white); }
   .comment-input:focus { border-color: var(--navy-light); }
-  .btn-send {
-    padding: 10px 18px; background: var(--navy); color: white; border: none;
-    border-radius: 24px; cursor: pointer; font-family: 'Sarabun', sans-serif;
-    font-size: 14px; font-weight: 600; transition: all 0.2s; white-space: nowrap;
-  }
+  .btn-send { padding: 10px 18px; background: var(--navy); color: white; border: none; border-radius: 24px; cursor: pointer; font-family: 'Sarabun', sans-serif; font-size: 14px; font-weight: 600; transition: all 0.2s; white-space: nowrap; }
   .btn-send:hover { background: var(--navy-light); }
 
-  /* TOGGLE / EXPAND */
-  .expand-btn {
-    background: none; border: none; color: var(--gold); font-family: 'Sarabun', sans-serif;
-    font-size: 13px; font-weight: 600; cursor: pointer; padding: 0;
-    display: flex; align-items: center; gap: 5px;
-  }
+  /* EXPAND */
+  .expand-btn { background: none; border: none; color: var(--gold); font-family: 'Sarabun', sans-serif; font-size: 13px; font-weight: 600; cursor: pointer; padding: 0; display: flex; align-items: center; gap: 5px; }
   .expand-btn:hover { color: var(--navy); }
   .collapsible { display: none; }
   .collapsible.open { display: block; }
 
-  /* CREATE POST FORM */
-  .form-card { background: var(--white); border-radius: var(--radius-lg); border: var(--border); box-shadow: var(--shadow-sm); padding: 28px; margin-bottom: 24px; }
-  .form-card h3 { font-family: 'Chakra Petch', sans-serif; font-size: 17px; color: var(--navy); margin-bottom: 20px; padding-bottom: 14px; border-bottom: var(--border); }
-  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-  .form-group-app { margin-bottom: 16px; }
-  .form-label-app { display: block; font-size: 13px; font-weight: 700; color: var(--gray-600); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.04em; }
-  .form-input-app, .form-select-app, .form-textarea-app {
-    width: 100%; padding: 10px 14px; border: var(--border); border-radius: var(--radius);
-    font-family: 'Sarabun', sans-serif; font-size: 14px; color: var(--gray-800);
-    outline: none; transition: border-color 0.2s; background: var(--white);
-  }
-  .form-input-app:focus, .form-select-app:focus, .form-textarea-app:focus { border-color: var(--navy-light); box-shadow: 0 0 0 3px rgba(30,51,112,0.08); }
-  .form-textarea-app { resize: vertical; min-height: 90px; }
-  .form-actions { display: flex; gap: 10px; justify-content: flex-end; padding-top: 16px; border-top: var(--border); margin-top: 20px; }
-
-  /* CHATROOM */
+  /* CHAT */
   .chat-layout { display: grid; grid-template-columns: 220px 1fr; gap: 18px; height: calc(100vh - 200px); min-height: 500px; }
   .chat-rooms { background: var(--white); border-radius: var(--radius-lg); border: var(--border); box-shadow: var(--shadow-sm); overflow: hidden; display: flex; flex-direction: column; }
   .chat-rooms-header { padding: 16px 18px; background: var(--navy); }
   .chat-rooms-header h4 { color: var(--gold-light); font-size: 13px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase; }
-  .room-item {
-    padding: 12px 18px; cursor: pointer; transition: all 0.2s;
-    border-bottom: 1px solid var(--gray-100); display: flex; align-items: center; gap: 8px;
-  }
+  .room-list-scroll { flex: 1; overflow-y: auto; }
+  .room-item { padding: 12px 18px; cursor: pointer; transition: all 0.2s; border-bottom: 1px solid var(--gray-100); display: flex; align-items: center; gap: 8px; position: relative; }
   .room-item:hover { background: var(--gray-50); }
   .room-item.active { background: var(--gold-pale); border-left: 3px solid var(--gold); }
   .room-item .room-icon { font-size: 16px; }
-  .room-item .room-name { font-size: 13px; font-weight: 600; color: var(--navy); }
-  .room-item .room-count { margin-left: auto; font-size: 11px; background: var(--navy); color: white; padding: 2px 7px; border-radius: 10px; }
-  .btn-add-room {
-    margin: 12px; padding: 9px; background: var(--gray-50); border: 1px dashed var(--gray-200);
-    border-radius: var(--radius); cursor: pointer; text-align: center; color: var(--gray-400);
-    font-family: 'Sarabun', sans-serif; font-size: 13px; transition: all 0.2s;
-  }
+  .room-item .room-name { font-size: 13px; font-weight: 600; color: var(--navy); flex: 1; }
+  .room-item .room-unread { background: var(--red); color: white; font-size: 10px; font-weight: 700; padding: 2px 6px; border-radius: 10px; min-width: 18px; text-align: center; }
+  .btn-add-room { margin: 12px; padding: 9px; background: var(--gray-50); border: 1px dashed var(--gray-200); border-radius: var(--radius); cursor: pointer; text-align: center; color: var(--gray-400); font-family: 'Sarabun', sans-serif; font-size: 13px; transition: all 0.2s; }
   .btn-add-room:hover { border-color: var(--gold); color: var(--gold); background: var(--gold-pale); }
 
   .chat-window { background: var(--white); border-radius: var(--radius-lg); border: var(--border); box-shadow: var(--shadow-sm); display: flex; flex-direction: column; overflow: hidden; }
-  .chat-topbar { padding: 14px 20px; border-bottom: var(--border); background: var(--gray-50); display: flex; align-items: center; gap: 10px; }
+  .chat-topbar { padding: 14px 20px; border-bottom: var(--border); background: var(--gray-50); display: flex; align-items: center; gap: 10px; justify-content: space-between; }
+  .chat-topbar-left { display: flex; align-items: center; gap: 10px; }
   .chat-topbar .room-name-big { font-weight: 700; color: var(--navy); font-size: 15px; }
   .chat-topbar .room-desc { color: var(--gray-400); font-size: 12px; }
-  .chat-messages { flex: 1; overflow-y: auto; padding: 20px; display: flex; flex-direction: column; gap: 14px; }
-  .chat-msg { display: flex; gap: 10px; animation: msgSlide 0.2s ease; }
+  .online-count { font-size: 12px; color: var(--green); font-weight: 600; display: flex; align-items: center; gap: 4px; }
+
+  .chat-messages { flex: 1; overflow-y: auto; padding: 20px; display: flex; flex-direction: column; gap: 4px; }
+  .chat-msg { display: flex; gap: 10px; animation: msgSlide 0.2s ease; margin-bottom: 6px; }
   @keyframes msgSlide { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
   .chat-msg.own { flex-direction: row-reverse; }
-  .chat-msg .msg-avatar {
-    width: 34px; height: 34px; border-radius: 50%; flex-shrink: 0;
-    background: linear-gradient(135deg, var(--navy-light), var(--navy));
-    display: flex; align-items: center; justify-content: center;
-    color: var(--gold-light); font-size: 12px; font-weight: 700;
-  }
+  .chat-msg .msg-avatar { width: 34px; height: 34px; border-radius: 50%; flex-shrink: 0; background: linear-gradient(135deg, var(--navy-light), var(--navy)); display: flex; align-items: center; justify-content: center; color: var(--gold-light); font-size: 12px; font-weight: 700; }
   .chat-msg.own .msg-avatar { background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: var(--navy); }
-  .msg-content { max-width: 60%; }
-  .msg-name { font-size: 11px; font-weight: 700; color: var(--gray-400); margin-bottom: 4px; }
+  .msg-content { max-width: 70%; }
+  .msg-name { font-size: 11px; color: var(--gray-400); margin-bottom: 3px; }
   .chat-msg.own .msg-name { text-align: right; }
-  .msg-bubble {
-    padding: 10px 14px; border-radius: 16px; font-size: 14px; line-height: 1.5;
-    background: var(--gray-100); color: var(--gray-800);
-  }
-  .chat-msg.own .msg-bubble { background: var(--navy); color: white; }
-  .msg-time { font-size: 10px; color: var(--gray-400); margin-top: 4px; }
+  .msg-role-tag { font-size: 10px; padding: 1px 5px; border-radius: 8px; background: var(--gold-pale); color: var(--amber); font-weight: 600; margin-left: 4px; }
+  .msg-bubble { padding: 10px 14px; border-radius: 14px; font-size: 14px; line-height: 1.5; word-break: break-word; }
+  .chat-msg:not(.own) .msg-bubble { background: var(--gray-100); color: var(--gray-800); border-bottom-left-radius: 4px; }
+  .chat-msg.own .msg-bubble { background: var(--navy); color: white; border-bottom-right-radius: 4px; }
+  .msg-time { font-size: 11px; color: var(--gray-400); margin-top: 3px; }
   .chat-msg.own .msg-time { text-align: right; }
-  .chat-input-area { padding: 14px 20px; border-top: var(--border); display: flex; gap: 10px; background: var(--white); }
-  .chat-input {
-    flex: 1; padding: 11px 16px; border: var(--border); border-radius: 24px;
-    font-family: 'Sarabun', sans-serif; font-size: 14px; outline: none;
-    transition: border-color 0.2s;
-  }
-  .chat-input:focus { border-color: var(--navy); }
-  .chat-send {
-    padding: 11px 20px; background: var(--navy); color: white; border: none;
-    border-radius: 24px; cursor: pointer; font-family: 'Sarabun', sans-serif;
-    font-size: 14px; font-weight: 600; transition: all 0.2s; white-space: nowrap;
-  }
-  .chat-send:hover { background: var(--navy-light); transform: translateX(1px); }
 
-  /* ADMIN PANEL */
-  .admin-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-bottom: 24px; }
-  .admin-stat {
-    background: var(--white); border-radius: var(--radius-lg); border: var(--border);
-    padding: 22px 24px; text-align: center; box-shadow: var(--shadow-sm);
-  }
-  .admin-stat .stat-num { font-family: 'Chakra Petch', sans-serif; font-size: 36px; font-weight: 700; color: var(--navy); }
-  .admin-stat .stat-label { font-size: 13px; color: var(--gray-400); margin-top: 4px; }
-  .admin-stat .stat-icon { font-size: 28px; margin-bottom: 8px; }
+  /* Reply */
+  .msg-reply-btn { background: none; border: none; color: var(--gray-400); font-size: 11px; cursor: pointer; padding: 2px 6px; border-radius: 4px; display: none; }
+  .msg-reply-btn:hover { background: var(--gray-100); color: var(--navy); }
+  .chat-msg:hover .msg-reply-btn { display: inline-block; }
+  .msg-reply-preview { background: rgba(255,255,255,0.15); border-left: 3px solid var(--gold); padding: 4px 8px; border-radius: 4px; font-size: 11px; margin-bottom: 4px; }
+  .chat-msg:not(.own) .msg-reply-preview { background: var(--gray-200); border-left-color: var(--navy); }
+  .reply-bar { background: var(--gold-pale); border-top: 1px solid var(--gold-light); padding: 8px 16px; display: none; align-items: center; gap: 8px; font-size: 13px; color: var(--amber); }
+  .reply-bar.active { display: flex; }
+  .reply-bar-text { flex: 1; font-weight: 600; }
+  .reply-bar span { color: var(--gray-600); font-weight: 400; }
+  .reply-cancel { background: none; border: none; cursor: pointer; color: var(--gray-400); font-size: 16px; padding: 0 4px; }
+
+  .chat-input-area { padding: 16px 20px; border-top: var(--border); display: flex; gap: 10px; align-items: center; }
+  .chat-input { flex: 1; padding: 11px 16px; border: var(--border); border-radius: 24px; font-family: 'Sarabun', sans-serif; font-size: 14px; outline: none; transition: border-color 0.2s; }
+  .chat-input:focus { border-color: var(--navy-light); box-shadow: 0 0 0 3px rgba(30,51,112,0.08); }
+  .chat-send { padding: 11px 20px; background: var(--navy); color: white; border: none; border-radius: 24px; cursor: pointer; font-family: 'Sarabun', sans-serif; font-size: 14px; font-weight: 600; transition: all 0.2s; white-space: nowrap; }
+  .chat-send:hover { background: var(--navy-light); }
+
+  /* NOTIFICATION POPUP */
+  .notif-popup { position: fixed; top: 80px; right: 20px; z-index: 9999; display: flex; flex-direction: column; gap: 8px; pointer-events: none; }
+  .notif-item { background: var(--navy); color: white; padding: 12px 18px; border-radius: var(--radius); box-shadow: var(--shadow-lg); border-left: 4px solid var(--gold); font-size: 13px; max-width: 320px; animation: notifSlide 0.3s ease; pointer-events: auto; cursor: pointer; }
+  @keyframes notifSlide { from { opacity:0; transform: translateX(40px); } to { opacity:1; transform:none; } }
+  .notif-item .notif-title { font-weight: 700; font-size: 12px; color: var(--gold-light); margin-bottom: 2px; }
+  .notif-item .notif-msg { color: rgba(255,255,255,0.85); }
+  .notif-item .notif-sub { font-size: 11px; color: var(--gray-400); margin-top: 3px; }
+
+  /* ADMIN */
+  .admin-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 24px; }
+  .admin-stat { background: var(--white); border-radius: var(--radius-lg); border: var(--border); box-shadow: var(--shadow-sm); padding: 20px; text-align: center; }
+  .stat-icon { font-size: 28px; margin-bottom: 8px; }
+  .stat-num { font-family: 'Chakra Petch', sans-serif; font-size: 28px; font-weight: 700; color: var(--navy); }
+  .stat-label { font-size: 12px; color: var(--gray-400); margin-top: 4px; }
   .admin-table { width: 100%; border-collapse: collapse; }
-  .admin-table th, .admin-table td { padding: 12px 14px; text-align: left; font-size: 13px; }
-  .admin-table th { background: var(--navy); color: var(--gold-light); font-weight: 700; letter-spacing: 0.04em; font-family: 'Chakra Petch', sans-serif; font-size: 12px; }
-  .admin-table tr:nth-child(even) { background: var(--gray-50); }
-  .admin-table td { border-bottom: 1px solid var(--gray-100); color: var(--gray-800); }
-  .role-badge {
-    display: inline-block; padding: 2px 10px; border-radius: 20px; font-size: 11px; font-weight: 700;
-  }
+  .admin-table th { background: var(--gray-50); padding: 12px 16px; text-align: left; font-size: 12px; font-weight: 700; color: var(--gray-600); text-transform: uppercase; letter-spacing: 0.04em; border-bottom: var(--border); }
+  .admin-table td { padding: 12px 16px; border-bottom: 1px solid var(--gray-100); font-size: 14px; vertical-align: middle; }
+  .admin-table tr:last-child td { border-bottom: none; }
+  .admin-table tr:hover td { background: var(--gray-50); }
+  .role-badge { padding: 3px 10px; border-radius: 12px; font-size: 12px; font-weight: 700; }
   .role-badge.admin { background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: var(--navy); }
   .role-badge.member { background: var(--gray-100); color: var(--gray-600); }
+  .role-badge.custom { background: var(--green-light); color: var(--green); }
 
-  /* TOAST */
-  .toast {
-    position: fixed; bottom: 28px; right: 28px; z-index: 9999;
-    background: var(--navy); color: white; padding: 12px 20px; border-radius: var(--radius);
-    font-size: 14px; font-weight: 500; box-shadow: var(--shadow-lg);
-    animation: toastIn 0.3s ease; display: flex; align-items: center; gap: 8px;
-    border-left: 4px solid var(--gold);
-  }
-  @keyframes toastIn { from { opacity:0; transform: translateY(12px); } to { opacity:1; transform: none; } }
+  /* ROLE EDITOR */
+  .role-edit-wrap { display: flex; align-items: center; gap: 6px; }
+  .role-edit-input { padding: 4px 8px; border: 1px solid var(--gray-200); border-radius: 6px; font-family: 'Sarabun', sans-serif; font-size: 13px; width: 120px; outline: none; }
+  .role-edit-input:focus { border-color: var(--navy-light); }
+  .btn-save-role { padding: 4px 10px; background: var(--green); color: white; border: none; border-radius: 6px; font-size: 12px; cursor: pointer; font-family: 'Sarabun', sans-serif; }
+  .btn-save-role:hover { opacity: 0.85; }
+
+  /* FORM */
+  .form-group-app { margin-bottom: 16px; }
+  .form-label-app { display: block; font-size: 13px; font-weight: 700; color: var(--gray-600); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.04em; }
+  .form-input-app, .form-select-app, .form-textarea-app { width: 100%; padding: 10px 14px; border: var(--border); border-radius: var(--radius); font-family: 'Sarabun', sans-serif; font-size: 14px; color: var(--gray-800); outline: none; transition: border-color 0.2s; background: var(--white); }
+  .form-input-app:focus, .form-select-app:focus, .form-textarea-app:focus { border-color: var(--navy-light); box-shadow: 0 0 0 3px rgba(30,51,112,0.08); }
+  .form-textarea-app { resize: vertical; min-height: 90px; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .form-actions { display: flex; gap: 10px; justify-content: flex-end; padding-top: 16px; border-top: var(--border); margin-top: 20px; }
 
   /* MODAL */
-  .modal-overlay {
-    position: fixed; inset: 0; background: rgba(13,27,62,0.6); z-index: 1000;
-    display: flex; align-items: center; justify-content: center; padding: 20px;
-    backdrop-filter: blur(4px); display: none;
-  }
-  .modal-overlay.open { display: flex; animation: modalFade 0.2s ease; }
-  @keyframes modalFade { from { opacity:0; } to { opacity:1; } }
-  .modal-box {
-    background: var(--white); border-radius: var(--radius-lg); width: 100%; max-width: 520px;
-    box-shadow: var(--shadow-lg); overflow: hidden;
-  }
-  .modal-header {
-    padding: 20px 24px; background: linear-gradient(135deg, var(--navy), var(--navy-mid));
-    display: flex; align-items: center; justify-content: space-between;
-  }
-  .modal-header h3 { color: var(--gold-light); font-family: 'Chakra Petch', sans-serif; font-size: 16px; }
-  .modal-close { background: none; border: none; color: rgba(255,255,255,0.6); font-size: 20px; cursor: pointer; }
-  .modal-close:hover { color: white; }
+  .modal-overlay { position: fixed; inset: 0; background: rgba(13,27,62,0.55); z-index: 1000; align-items: center; justify-content: center; display: none; }
+  .modal-overlay.open { display: flex; }
+  .modal-box { background: var(--white); border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); width: 100%; max-width: 520px; max-height: 90vh; overflow-y: auto; animation: modalPop 0.25s ease; }
+  @keyframes modalPop { from { opacity:0; transform: scale(0.95); } to { opacity:1; transform: none; } }
+  .modal-header { padding: 22px 24px 18px; border-bottom: var(--border); display: flex; align-items: center; justify-content: space-between; }
+  .modal-header h3 { font-family: 'Chakra Petch', sans-serif; font-size: 18px; color: var(--navy); }
+  .modal-close { background: none; border: none; font-size: 18px; cursor: pointer; color: var(--gray-400); padding: 4px; }
   .modal-body { padding: 24px; }
 
-  /* EMPTY STATE */
+  /* EMPTY */
   .empty-state { text-align: center; padding: 60px 20px; color: var(--gray-400); }
-  .empty-state .empty-icon { font-size: 52px; display: block; margin-bottom: 16px; opacity: 0.5; }
-  .empty-state h4 { font-size: 16px; color: var(--gray-600); margin-bottom: 8px; }
-  .empty-state p { font-size: 13px; }
+  .empty-icon { font-size: 48px; display: block; margin-bottom: 16px; }
+  .empty-state h4 { font-size: 16px; font-weight: 700; color: var(--gray-600); margin-bottom: 8px; }
+
+  /* TOAST */
+  .toast { position: fixed; bottom: 28px; left: 50%; transform: translateX(-50%); background: var(--navy); color: white; padding: 12px 24px; border-radius: 24px; font-size: 14px; font-weight: 600; z-index: 9999; animation: toastIn 0.3s ease; box-shadow: var(--shadow-lg); white-space: nowrap; }
+  @keyframes toastIn { from { opacity:0; transform: translateX(-50%) translateY(16px); } to { opacity:1; transform: translateX(-50%) translateY(0); } }
 
   /* SCROLLBAR */
   ::-webkit-scrollbar { width: 6px; height: 6px; }
-  ::-webkit-scrollbar-track { background: var(--gray-50); }
+  ::-webkit-scrollbar-track { background: transparent; }
   ::-webkit-scrollbar-thumb { background: var(--gray-200); border-radius: 3px; }
   ::-webkit-scrollbar-thumb:hover { background: var(--gray-400); }
 
   @media (max-width: 700px) {
     .chat-layout { grid-template-columns: 1fr; grid-template-rows: auto 1fr; }
-    .chat-rooms { max-height: 200px; }
+    .chat-rooms { max-height: 180px; }
     .form-row { grid-template-columns: 1fr; }
     .app-header { padding: 0 14px; }
     .app-content { padding: 16px; }
     .app-nav { padding: 0 10px; }
-    .nav-btn { padding: 12px 12px; font-size: 13px; }
+    .nav-btn { padding: 12px 10px; font-size: 13px; }
+    .admin-grid { grid-template-columns: repeat(2,1fr); }
+    .header-brand .brand-text { display: none; }
   }
 </style>
 </head>
 <body>
 
-<!-- ============ LOGIN SCREEN ============ -->
+<!-- LOGIN SCREEN -->
 <div id="screen-login" class="screen active">
   <div class="login-bg-pattern"></div>
   <div class="login-box">
@@ -464,40 +331,31 @@
     </div>
     <div class="login-divider"></div>
     <div id="login-error" class="login-error"></div>
-
-    <!-- MEMBER LOGIN -->
     <div id="form-member">
       <div class="form-group">
         <label class="form-label">ชื่อผู้ใช้งาน</label>
-        <input id="input-name" class="form-input" type="text" placeholder="กรอกชื่อของท่าน (เช่น นายสมชาย)">
+        <input id="input-name" class="form-input" type="text" placeholder="กรอกชื่อของท่าน" onkeydown="if(event.key==='Enter') loginMember()">
       </div>
       <button class="btn-primary" onclick="loginMember()">🚀 เข้าสู่ระบบ</button>
-      <div class="login-switch">
-        <a onclick="showAdminForm()">เข้าสู่ระบบในฐานะผู้ดูแล (Admin) →</a>
-      </div>
+      <div class="login-switch"><a onclick="showAdminForm()">เข้าสู่ระบบในฐานะผู้ดูแล (Admin) →</a></div>
     </div>
-
-    <!-- ADMIN LOGIN -->
     <div id="form-admin" style="display:none;">
       <div class="form-group">
         <label class="form-label">ชื่อผู้ดูแลระบบ</label>
-        <input id="input-admin-name" class="form-input" type="text" placeholder="กรอกชื่อ Admin">
+        <input id="input-admin-name" class="form-input" type="text" placeholder="กรอกชื่อ Admin" onkeydown="if(event.key==='Enter') loginAdmin()">
       </div>
       <div class="form-group">
         <label class="form-label">รหัสผ่าน Admin</label>
-        <input id="input-admin-pass" class="form-input" type="password" placeholder="กรอกรหัสผ่าน">
+        <input id="input-admin-pass" class="form-input" type="password" placeholder="กรอกรหัสผ่าน" onkeydown="if(event.key==='Enter') loginAdmin()">
       </div>
       <button class="btn-primary" onclick="loginAdmin()">🔑 เข้าสู่ระบบ Admin</button>
-      <div class="login-switch">
-        <a onclick="showMemberForm()">← กลับไปเข้าสู่ระบบทั่วไป</a>
-      </div>
+      <div class="login-switch"><a onclick="showMemberForm()">← กลับไปเข้าสู่ระบบทั่วไป</a></div>
     </div>
   </div>
 </div>
 
-<!-- ============ APP SCREEN ============ -->
+<!-- APP SCREEN -->
 <div id="screen-app" class="screen">
-  <!-- HEADER -->
   <header class="app-header">
     <div class="header-brand">
       <span class="brand-icon">🏛️</span>
@@ -506,6 +364,7 @@
     <div class="header-user">
       <div class="user-badge">
         <div class="user-avatar" id="header-avatar">ส</div>
+        <div class="online-dot"></div>
         <span class="user-name" id="header-name">สมชาย</span>
         <span class="user-role-tag" id="header-role">สมาชิก</span>
       </div>
@@ -513,17 +372,17 @@
     </div>
   </header>
 
-  <!-- NAV -->
   <nav class="app-nav">
-    <button class="nav-btn active" onclick="switchPage('schedule')">📅 กำหนดการ</button>
-    <button class="nav-btn" onclick="switchPage('chat')">💬 ห้องพูดคุย</button>
-    <button class="nav-btn admin-only" onclick="switchPage('admin')" style="display:none">⚙️ จัดการระบบ</button>
+    <button class="nav-btn active" data-page="schedule" onclick="switchPage('schedule')">📅 กำหนดการ</button>
+    <button class="nav-btn" data-page="chat" onclick="switchPage('chat')">
+      💬 ห้องพูดคุย
+      <span class="nav-notif" id="chat-notif-badge" style="display:none">0</span>
+    </button>
+    <button class="nav-btn admin-only" data-page="admin" onclick="switchPage('admin')" style="display:none">⚙️ จัดการระบบ</button>
   </nav>
 
-  <!-- CONTENT -->
   <div class="app-content">
-
-    <!-- ======= SCHEDULE PAGE ======= -->
+    <!-- SCHEDULE PAGE -->
     <div id="page-schedule" class="page active">
       <div class="page-header">
         <div>
@@ -532,19 +391,16 @@
         </div>
         <button class="btn btn-gold" onclick="openCreatePost()">+ สร้างกำหนดการใหม่</button>
       </div>
-
-      <!-- Filter -->
       <div style="display:flex; gap:10px; margin-bottom:20px; flex-wrap:wrap;">
         <button class="btn btn-sm btn-navy" onclick="filterPosts('all')">ทั้งหมด</button>
         <button class="btn btn-sm btn-outline" onclick="filterPosts('การประชุม')">📋 การประชุม</button>
         <button class="btn btn-sm btn-outline" onclick="filterPosts('กิจกรรม')">🎯 กิจกรรม</button>
         <button class="btn btn-sm btn-outline" onclick="filterPosts('เอกสาร')">📄 เอกสาร/มติ</button>
       </div>
-
       <div id="posts-container"></div>
     </div>
 
-    <!-- ======= CHAT PAGE ======= -->
+    <!-- CHAT PAGE -->
     <div id="page-chat" class="page">
       <div class="page-header">
         <div>
@@ -553,27 +409,31 @@
         </div>
       </div>
       <div class="chat-layout">
-        <!-- Room List -->
         <div class="chat-rooms">
           <div class="chat-rooms-header"><h4>📢 ห้องทั้งหมด</h4></div>
-          <div id="room-list"></div>
-          <button class="btn-add-room" onclick="openAddRoom()">+ สร้างห้องใหม่</button>
+          <div class="room-list-scroll" id="room-list"></div>
+          <button class="btn-add-room admin-only" id="btn-add-room-admin" onclick="openAddRoom()" style="display:none">+ สร้างห้องใหม่</button>
         </div>
-        <!-- Chat Window -->
         <div class="chat-window">
           <div class="chat-topbar">
-            <span style="font-size:20px" id="chat-room-icon">💬</span>
-            <div>
-              <div class="room-name-big" id="chat-room-name">เลือกห้องสนทนา</div>
-              <div class="room-desc" id="chat-room-desc">กรุณาเลือกห้องจากรายการทางซ้าย</div>
+            <div class="chat-topbar-left">
+              <span style="font-size:20px" id="chat-room-icon">💬</span>
+              <div>
+                <div class="room-name-big" id="chat-room-name">เลือกห้องสนทนา</div>
+                <div class="room-desc" id="chat-room-desc">กรุณาเลือกห้องจากรายการทางซ้าย</div>
+              </div>
+            </div>
+            <div class="online-count" id="online-count" style="display:none">
+              <span>●</span> <span id="online-count-num">1</span> ออนไลน์
             </div>
           </div>
           <div id="chat-messages" class="chat-messages">
-            <div class="empty-state">
-              <span class="empty-icon">💬</span>
-              <h4>ยังไม่มีข้อความ</h4>
-              <p>เลือกห้องเพื่อเริ่มสนทนา</p>
-            </div>
+            <div class="empty-state"><span class="empty-icon">💬</span><h4>ยังไม่มีข้อความ</h4><p>เลือกห้องเพื่อเริ่มสนทนา</p></div>
+          </div>
+          <div class="reply-bar" id="reply-bar">
+            <span>↩️</span>
+            <div class="reply-bar-text" id="reply-bar-text">ตอบกลับ: <span id="reply-bar-content"></span></div>
+            <button class="reply-cancel" onclick="cancelReply()">✕</button>
           </div>
           <div class="chat-input-area">
             <input id="chat-input" class="chat-input" placeholder="พิมพ์ข้อความ..." onkeydown="if(event.key==='Enter') sendChat()">
@@ -583,7 +443,7 @@
       </div>
     </div>
 
-    <!-- ======= ADMIN PAGE ======= -->
+    <!-- ADMIN PAGE -->
     <div id="page-admin" class="page">
       <div class="page-header">
         <div>
@@ -591,18 +451,17 @@
           <div class="page-subtitle">ภาพรวมและการจัดการสำหรับผู้ดูแลระบบ</div>
         </div>
       </div>
-
-      <!-- Stats -->
       <div class="admin-grid" id="admin-stats"></div>
 
       <!-- Users Table -->
       <div class="card" style="margin-bottom:20px;">
         <div class="card-header">
-          <div style="font-weight:700; color:var(--navy); font-family:'Chakra Petch',sans-serif;">👥 ผู้ใช้งานที่ผ่านมา</div>
+          <div style="font-weight:700; color:var(--navy); font-family:'Chakra Petch',sans-serif;">👥 จัดการผู้ใช้งาน</div>
+          <span style="font-size:12px; color:var(--gray-400);">คลิก "แก้ไขบทบาท" เพื่อกำหนดตำแหน่ง</span>
         </div>
         <div class="card-body" style="padding:0;">
           <table class="admin-table">
-            <thead><tr><th>#</th><th>ชื่อ</th><th>บทบาท</th><th>เข้าสู่ระบบล่าสุด</th></tr></thead>
+            <thead><tr><th>#</th><th>ชื่อ</th><th>บทบาท / ตำแหน่ง</th><th>เข้าสู่ระบบล่าสุด</th><th>จัดการ</th></tr></thead>
             <tbody id="admin-users-table"></tbody>
           </table>
         </div>
@@ -621,11 +480,10 @@
         </div>
       </div>
     </div>
-
-  </div><!-- /app-content -->
+  </div>
 </div>
 
-<!-- ============ MODAL: CREATE POST ============ -->
+<!-- MODAL: CREATE POST -->
 <div id="modal-create-post" class="modal-overlay">
   <div class="modal-box">
     <div class="modal-header">
@@ -667,7 +525,7 @@
   </div>
 </div>
 
-<!-- ============ MODAL: ADD CHAT ROOM ============ -->
+<!-- MODAL: ADD CHAT ROOM -->
 <div id="modal-add-room" class="modal-overlay">
   <div class="modal-box">
     <div class="modal-header">
@@ -678,12 +536,12 @@
       <div class="form-group-app">
         <label class="form-label-app">ไอคอนห้อง</label>
         <div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:8px;">
-          <span style="cursor:pointer; font-size:22px;" onclick="selectEmoji(this, '💬')">💬</span>
-          <span style="cursor:pointer; font-size:22px;" onclick="selectEmoji(this, '📋')">📋</span>
-          <span style="cursor:pointer; font-size:22px;" onclick="selectEmoji(this, '📢')">📢</span>
-          <span style="cursor:pointer; font-size:22px;" onclick="selectEmoji(this, '🎯')">🎯</span>
-          <span style="cursor:pointer; font-size:22px;" onclick="selectEmoji(this, '🔔')">🔔</span>
-          <span style="cursor:pointer; font-size:22px;" onclick="selectEmoji(this, '🏛️')">🏛️</span>
+          <span style="cursor:pointer; font-size:22px;" onclick="selectEmoji('💬')">💬</span>
+          <span style="cursor:pointer; font-size:22px;" onclick="selectEmoji('📋')">📋</span>
+          <span style="cursor:pointer; font-size:22px;" onclick="selectEmoji('📢')">📢</span>
+          <span style="cursor:pointer; font-size:22px;" onclick="selectEmoji('🎯')">🎯</span>
+          <span style="cursor:pointer; font-size:22px;" onclick="selectEmoji('🔔')">🔔</span>
+          <span style="cursor:pointer; font-size:22px;" onclick="selectEmoji('🏛️')">🏛️</span>
         </div>
         <input id="room-icon-input" class="form-input-app" value="💬" placeholder="หรือพิมพ์ emoji" style="width:80px;">
       </div>
@@ -703,21 +561,29 @@
   </div>
 </div>
 
+<!-- NOTIFICATION CONTAINER -->
+<div class="notif-popup" id="notif-popup"></div>
+
 <script>
 // ============ STATE ============
 let currentUser = null;
 let currentFilter = 'all';
 let currentRoom = null;
+let replyTo = null;
+let chatPollInterval = null;
+let lastMsgCount = {};
+let unreadChatCount = 0;
+let onPage = 'schedule';
 
 const ADMIN_PASSWORD = 'ITadmin';
+const POLL_INTERVAL = 2000; // 2 seconds
 
-// ============ STORAGE HELPERS ============
-function getDB(key, def = []) {
-  try { return JSON.parse(localStorage.getItem(key)) || def; } catch { return def; }
+// ============ STORAGE ============
+function getDB(key, def) {
+  try { const v = localStorage.getItem(key); return v !== null ? JSON.parse(v) : def; }
+  catch { return def; }
 }
-function setDB(key, val) {
-  localStorage.setItem(key, JSON.stringify(val));
-}
+function setDB(key, val) { localStorage.setItem(key, JSON.stringify(val)); }
 
 // ============ INIT DATA ============
 function initData() {
@@ -733,24 +599,12 @@ function initData() {
     const d1 = new Date(now); d1.setDate(d1.getDate() + 3);
     const d2 = new Date(now); d2.setDate(d2.getDate() + 7);
     setDB('posts', [
-      {
-        id: 'p1', type: 'การประชุม', title: 'การประชุมคณะกรรมการครั้งที่ 1/2568',
-        datetime: d1.toISOString().slice(0,16),
-        location: 'ห้องประชุมใหญ่ ชั้น 3 อาคารบริหาร',
-        detail: 'วาระที่ 1: รับรองรายงานการประชุมครั้งที่ผ่านมา\nวาระที่ 2: รายงานผลการดำเนินงานประจำเดือน\nวาระที่ 3: พิจารณาแผนงานไตรมาสถัดไป\nวาระที่ 4: เรื่องอื่น ๆ (ถ้ามี)',
-        author: 'ผู้ดูแลระบบ', createdAt: new Date().toISOString(),
-        votes: {}, comments: []
-      },
-      {
-        id: 'p2', type: 'กิจกรรม', title: 'กิจกรรมสัมมนาพัฒนาศักยภาพกรรมการ ประจำปี 2568',
-        datetime: d2.toISOString().slice(0,16),
-        location: 'โรงแรมเซ็นทารา เชียงใหม่',
-        detail: 'โปรแกรมสัมมนา 1 วัน ว่าด้วยการบริหารจัดการองค์กรและธรรมาภิบาล เชิญกรรมการทุกท่านเข้าร่วม',
-        author: 'ผู้ดูแลระบบ', createdAt: new Date().toISOString(),
-        votes: {}, comments: []
-      }
+      { id: 'p1', type: 'การประชุม', title: 'การประชุมคณะกรรมการครั้งที่ 1/2568', datetime: d1.toISOString().slice(0,16), location: 'ห้องประชุมใหญ่ ชั้น 3 อาคารบริหาร', detail: 'วาระที่ 1: รับรองรายงานการประชุมครั้งที่ผ่านมา\nวาระที่ 2: รายงานผลการดำเนินงานประจำเดือน\nวาระที่ 3: พิจารณาแผนงานไตรมาสถัดไป\nวาระที่ 4: เรื่องอื่น ๆ (ถ้ามี)', author: 'ผู้ดูแลระบบ', createdAt: new Date().toISOString(), votes: {}, comments: [] },
+      { id: 'p2', type: 'กิจกรรม', title: 'กิจกรรมสัมมนาพัฒนาศักยภาพกรรมการ ประจำปี 2568', datetime: d2.toISOString().slice(0,16), location: 'โรงแรมเซ็นทารา เชียงใหม่', detail: 'โปรแกรมสัมมนา 1 วัน ว่าด้วยการบริหารจัดการองค์กรและธรรมาภิบาล เชิญกรรมการทุกท่านเข้าร่วม', author: 'ผู้ดูแลระบบ', createdAt: new Date().toISOString(), votes: {}, comments: [] }
     ]);
   }
+  if (!localStorage.getItem('messages')) setDB('messages', {});
+  if (!localStorage.getItem('users')) setDB('users', {});
 }
 
 // ============ AUTH ============
@@ -764,11 +618,24 @@ function showMemberForm() {
   document.getElementById('form-member').style.display = 'block';
   document.getElementById('login-error').style.display = 'none';
 }
+function showLoginError(msg) {
+  const el = document.getElementById('login-error');
+  el.textContent = '⚠️ ' + msg;
+  el.style.display = 'block';
+}
 
 function loginMember() {
   const name = document.getElementById('input-name').value.trim();
   if (!name) { showLoginError('กรุณากรอกชื่อของท่าน'); return; }
-  doLogin(name, 'member');
+
+  // Check if user exists and is admin - preserve their role
+  const users = getDB('users', {});
+  const existing = users[name];
+  if (existing && existing.role === 'admin') {
+    showLoginError('บัญชีนี้เป็น Admin กรุณาเข้าสู่ระบบด้านล่าง');
+    return;
+  }
+  doLogin(name, existing ? (existing.role || 'member') : 'member', existing ? existing.customRole : null);
 }
 
 function loginAdmin() {
@@ -776,42 +643,62 @@ function loginAdmin() {
   const pass = document.getElementById('input-admin-pass').value;
   if (!name) { showLoginError('กรุณากรอกชื่อ Admin'); return; }
   if (pass !== ADMIN_PASSWORD) { showLoginError('รหัสผ่านไม่ถูกต้อง กรุณาลองใหม่'); return; }
-  doLogin(name, 'admin');
+  doLogin(name, 'admin', null);
 }
 
-function showLoginError(msg) {
-  const el = document.getElementById('login-error');
-  el.textContent = '⚠️ ' + msg;
-  el.style.display = 'block';
-}
+function doLogin(name, role, customRole) {
+  currentUser = { name, role, customRole: customRole || null };
 
-function doLogin(name, role) {
-  currentUser = { name, role };
-  // Save user to DB
+  // Update user in DB
   let users = getDB('users', {});
-  users[name] = { name, role, lastLogin: new Date().toISOString() };
+  const existing = users[name] || {};
+  users[name] = {
+    ...existing,
+    name,
+    role: existing.role === 'admin' && role === 'admin' ? 'admin' : role,
+    customRole: existing.customRole || customRole || null,
+    lastLogin: new Date().toISOString()
+  };
+  // If the DB has a custom role override for this user, apply it
+  if (users[name].role !== 'admin') {
+    currentUser.customRole = users[name].customRole || null;
+  }
   setDB('users', users);
+  // Save session
+  localStorage.setItem('session', JSON.stringify({ name, role }));
 
-  // Update header
-  document.getElementById('header-name').textContent = name;
-  document.getElementById('header-avatar').textContent = name.charAt(0).toUpperCase();
-  document.getElementById('header-role').textContent = role === 'admin' ? '👑 Admin' : 'สมาชิก';
+  updateHeader();
 
-  // Show/hide admin nav
   document.querySelectorAll('.admin-only').forEach(el => {
-    el.style.display = role === 'admin' ? 'block' : 'none';
+    el.style.display = role === 'admin' ? '' : 'none';
   });
 
   document.getElementById('screen-login').style.display = 'none';
   document.getElementById('screen-app').style.display = 'flex';
 
+  // Init last message count for polling
+  initLastMsgCount();
+  startPolling();
   renderPosts();
   renderRooms();
   if (role === 'admin') renderAdmin();
 }
 
+function updateHeader() {
+  const users = getDB('users', {});
+  const u = users[currentUser.name] || currentUser;
+  document.getElementById('header-name').textContent = currentUser.name;
+  document.getElementById('header-avatar').textContent = currentUser.name.charAt(0).toUpperCase();
+  const roleLabel = currentUser.role === 'admin' ? '👑 Admin' : (u.customRole || 'สมาชิก');
+  document.getElementById('header-role').textContent = roleLabel;
+}
+
 function logout() {
-  currentUser = null;
+  if (chatPollInterval) { clearInterval(chatPollInterval); chatPollInterval = null; }
+  // Mark offline
+  markOffline();
+  currentUser = null; currentRoom = null; replyTo = null; unreadChatCount = 0;
+  localStorage.removeItem('session');
   document.getElementById('screen-app').style.display = 'none';
   document.getElementById('screen-login').style.display = 'flex';
   document.getElementById('input-name').value = '';
@@ -821,69 +708,188 @@ function logout() {
   showMemberForm();
 }
 
+// ============ SESSION RESTORE ============
+function restoreSession() {
+  const sess = localStorage.getItem('session');
+  if (!sess) return false;
+  try {
+    const { name, role } = JSON.parse(sess);
+    const users = getDB('users', {});
+    const u = users[name];
+    if (!u) return false;
+    doLogin(name, u.role || role, u.customRole || null);
+    return true;
+  } catch { return false; }
+}
+
+// ============ ONLINE PRESENCE ============
+function markOnline() {
+  if (!currentUser) return;
+  const presence = getDB('presence', {});
+  presence[currentUser.name] = Date.now();
+  setDB('presence', presence);
+}
+
+function markOffline() {
+  if (!currentUser) return;
+  const presence = getDB('presence', {});
+  delete presence[currentUser.name];
+  setDB('presence', presence);
+}
+
+function getOnlineUsers() {
+  const presence = getDB('presence', {});
+  const now = Date.now();
+  return Object.entries(presence)
+    .filter(([, ts]) => now - ts < 15000)
+    .map(([name]) => name);
+}
+
+// ============ POLLING / REAL-TIME SIM ============
+function initLastMsgCount() {
+  const messages = getDB('messages', {});
+  lastMsgCount = {};
+  Object.keys(messages).forEach(roomId => {
+    lastMsgCount[roomId] = messages[roomId].length;
+  });
+}
+
+function startPolling() {
+  if (chatPollInterval) clearInterval(chatPollInterval);
+  chatPollInterval = setInterval(pollUpdates, POLL_INTERVAL);
+}
+
+function pollUpdates() {
+  markOnline();
+  const messages = getDB('messages', {});
+
+  // Check for new messages in all rooms
+  let hasNewMessages = false;
+  Object.entries(messages).forEach(([roomId, msgs]) => {
+    const prevCount = lastMsgCount[roomId] || 0;
+    if (msgs.length > prevCount) {
+      const newMsgs = msgs.slice(prevCount);
+      newMsgs.forEach(msg => {
+        if (msg.author !== currentUser.name) {
+          // Show notification if not in chat page or different room
+          if (onPage !== 'chat' || !currentRoom || currentRoom.id !== roomId) {
+            const rooms = getDB('rooms', []);
+            const room = rooms.find(r => r.id === roomId);
+            showNotification(
+              `💬 ${room ? room.name : 'ห้องสนทนา'}`,
+              `${msg.author}: ${msg.text.slice(0, 50)}${msg.text.length > 50 ? '...' : ''}`,
+              () => { switchPage('chat'); selectRoom(roomId); }
+            );
+            unreadChatCount++;
+            hasNewMessages = true;
+          }
+        }
+      });
+      lastMsgCount[roomId] = msgs.length;
+    }
+  });
+
+  // Update unread badge
+  const badge = document.getElementById('chat-notif-badge');
+  if (unreadChatCount > 0 && onPage !== 'chat') {
+    badge.textContent = unreadChatCount > 99 ? '99+' : unreadChatCount;
+    badge.style.display = 'block';
+  } else {
+    badge.style.display = 'none';
+  }
+
+  // If currently viewing chat, auto-refresh messages
+  if (onPage === 'chat' && currentRoom) {
+    const msgs = messages[currentRoom.id] || [];
+    const wasAtBottom = isScrolledToBottom();
+    renderMessages(false);
+    if (wasAtBottom) scrollToBottom();
+    renderRooms();
+  }
+
+  // Update online count
+  if (onPage === 'chat' && currentRoom) {
+    const online = getOnlineUsers();
+    const countEl = document.getElementById('online-count');
+    const countNum = document.getElementById('online-count-num');
+    if (online.length > 0) {
+      countEl.style.display = 'flex';
+      countNum.textContent = online.length;
+    }
+  }
+}
+
+function isScrolledToBottom() {
+  const el = document.getElementById('chat-messages');
+  if (!el) return true;
+  return el.scrollHeight - el.scrollTop - el.clientHeight < 60;
+}
+function scrollToBottom() {
+  const el = document.getElementById('chat-messages');
+  if (el) el.scrollTop = el.scrollHeight;
+}
+
+// ============ NOTIFICATIONS ============
+function showNotification(title, msg, onClick) {
+  const container = document.getElementById('notif-popup');
+  const item = document.createElement('div');
+  item.className = 'notif-item';
+  item.innerHTML = `<div class="notif-title">${title}</div><div class="notif-msg">${escHtml(msg)}</div><div class="notif-sub">คลิกเพื่อดู</div>`;
+  item.onclick = () => { item.remove(); if (onClick) onClick(); };
+  container.appendChild(item);
+  setTimeout(() => { if (item.parentNode) item.remove(); }, 5000);
+}
+
 // ============ PAGE SWITCHING ============
 function switchPage(page) {
+  onPage = page;
   document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
   document.getElementById('page-' + page).classList.add('active');
-  const navBtns = document.querySelectorAll('.nav-btn');
-  const pages = ['schedule', 'chat', 'admin'];
-  const idx = pages.indexOf(page);
-  if (navBtns[idx]) navBtns[idx].classList.add('active');
+  document.querySelector(`.nav-btn[data-page="${page}"]`)?.classList.add('active');
 
   if (page === 'admin') renderAdmin();
-  if (page === 'chat') renderRooms();
+  if (page === 'chat') {
+    unreadChatCount = 0;
+    document.getElementById('chat-notif-badge').style.display = 'none';
+    renderRooms();
+    initLastMsgCount(); // Reset counts when entering chat
+  }
 }
 
 // ============ POSTS ============
 function openCreatePost() { openModal('modal-create-post'); }
-
 function submitPost() {
   const title = document.getElementById('post-title').value.trim();
   const datetime = document.getElementById('post-datetime').value;
   if (!title || !datetime) { toast('⚠️ กรุณากรอกหัวข้อและวัน-เวลา'); return; }
-
   const posts = getDB('posts', []);
-  const post = {
+  posts.unshift({
     id: 'p' + Date.now(),
     type: document.getElementById('post-type').value,
-    title,
-    datetime,
+    title, datetime,
     location: document.getElementById('post-location').value.trim(),
     detail: document.getElementById('post-detail').value.trim(),
-    author: currentUser.name,
-    createdAt: new Date().toISOString(),
+    author: currentUser.name, createdAt: new Date().toISOString(),
     votes: {}, comments: []
-  };
-  posts.unshift(post);
+  });
   setDB('posts', posts);
   closeModal('modal-create-post');
-  clearPostForm();
+  ['post-title','post-datetime','post-location','post-detail'].forEach(id => document.getElementById(id).value = '');
   renderPosts();
   toast('✅ สร้างกำหนดการเรียบร้อยแล้ว');
 }
 
-function clearPostForm() {
-  ['post-title','post-datetime','post-location','post-detail'].forEach(id => {
-    document.getElementById(id).value = '';
-  });
-}
-
-function filterPosts(f) {
-  currentFilter = f;
-  renderPosts();
-}
+function filterPosts(f) { currentFilter = f; renderPosts(); }
 
 function renderPosts() {
   let posts = getDB('posts', []);
   if (currentFilter !== 'all') posts = posts.filter(p => p.type === currentFilter);
-
   const container = document.getElementById('posts-container');
   if (!posts.length) {
     container.innerHTML = `<div class="empty-state"><span class="empty-icon">📅</span><h4>ยังไม่มีกำหนดการ</h4><p>กดปุ่ม "สร้างกำหนดการใหม่" เพื่อเพิ่มรายการแรก</p></div>`;
     return;
   }
-
   container.innerHTML = posts.map(p => buildPostCard(p)).join('');
 }
 
@@ -896,17 +902,12 @@ function buildPostCard(p) {
   const approveW = total ? Math.round(approveList.length/total*100) : 0;
   const rejectW = total ? Math.round(rejectList.length/total*100) : 0;
   const myVote = currentUser ? votes[currentUser.name] : null;
-
   const dt = new Date(p.datetime);
   const dateStr = dt.toLocaleDateString('th-TH', { year:'numeric', month:'long', day:'numeric' });
   const timeStr = dt.toLocaleTimeString('th-TH', { hour:'2-digit', minute:'2-digit' });
-
   const badgeClass = p.type === 'การประชุม' ? 'badge-meeting' : p.type === 'กิจกรรม' ? 'badge-event' : 'badge-document';
   const typeIcon = p.type === 'การประชุม' ? '📋' : p.type === 'กิจกรรม' ? '🎯' : '📄';
-
-  const adminDeleteBtn = (currentUser && currentUser.role === 'admin') ?
-    `<button class="btn btn-xs btn-danger" onclick="deletePost('${p.id}')">🗑️ ลบ</button>` : '';
-
+  const adminDeleteBtn = (currentUser && currentUser.role === 'admin') ? `<button class="btn btn-xs btn-danger" onclick="deletePost('${p.id}')">🗑️ ลบ</button>` : '';
   const comments = (p.comments || []).slice(-50);
   const commentsHtml = comments.map(c => `
     <div class="comment-item">
@@ -916,34 +917,24 @@ function buildPostCard(p) {
         <div class="comment-text">${escHtml(c.text)}</div>
         <div class="comment-time">${formatTime(c.createdAt)}</div>
       </div>
-    </div>
-  `).join('');
-
-  return `
-  <div class="post-card" id="card-${p.id}">
+    </div>`).join('');
+  return `<div class="post-card" id="card-${p.id}">
     <div class="post-header">
       <div style="flex:1;">
         <span class="post-category-badge ${badgeClass}">${typeIcon} ${p.type}</span>
-        <div class="post-title-row">
-          <div class="post-title">${escHtml(p.title)}</div>
-          ${adminDeleteBtn}
-        </div>
+        <div class="post-title-row"><div class="post-title">${escHtml(p.title)}</div>${adminDeleteBtn}</div>
         <div class="post-meta">
-          <span class="post-meta-item"><span class="icon">📅</span>${dateStr}</span>
-          <span class="post-meta-item"><span class="icon">🕐</span>${timeStr} น.</span>
-          ${p.location ? `<span class="post-meta-item"><span class="icon">📍</span>${escHtml(p.location)}</span>` : ''}
+          <span class="post-meta-item"><span>📅</span>${dateStr}</span>
+          <span class="post-meta-item"><span>🕐</span>${timeStr} น.</span>
+          ${p.location ? `<span class="post-meta-item"><span>📍</span>${escHtml(p.location)}</span>` : ''}
         </div>
       </div>
     </div>
     ${p.detail ? `<div class="post-body"><div class="post-desc">${escHtml(p.detail).replace(/\n/g,'<br>')}</div></div>` : ''}
     <div class="post-footer">
       <span class="post-author">📝 โพสต์โดย: ${escHtml(p.author)} · ${formatTime(p.createdAt)}</span>
-      <button class="expand-btn" onclick="toggleSection('vote-${p.id}')" style="float:right;">
-        🗳️ แสดงความเห็นชอบ (${total})
-      </button>
+      <button class="expand-btn" onclick="toggleSection('vote-${p.id}')" style="float:right;">🗳️ แสดงความเห็นชอบ (${total})</button>
     </div>
-
-    <!-- VOTE SECTION -->
     <div class="vote-section collapsible" id="vote-${p.id}">
       <div class="vote-title">🗳️ ลงมติ</div>
       <div class="vote-btns">
@@ -961,13 +952,7 @@ function buildPostCard(p) {
         <span class="vote-stat reject">👎 ${rejectList.length} ไม่เห็นชอบ</span>
         <span class="vote-stat abstain">✋ ${abstainList.length} งดออกเสียง</span>
       </div>
-      ${total ? `<div class="vote-names">
-        ${approveList.length ? `✅ เห็นชอบ: ${approveList.join(', ')}` : ''}
-        ${rejectList.length ? `<br>❌ ไม่เห็นชอบ: ${rejectList.join(', ')}` : ''}
-        ${abstainList.length ? `<br>⚪ งดออกเสียง: ${abstainList.join(', ')}` : ''}
-      </div>` : ''}
-
-      <!-- COMMENT SECTION -->
+      ${total ? `<div class="vote-names">${approveList.length ? `✅ เห็นชอบ: ${approveList.join(', ')}` : ''}${rejectList.length ? `<br>❌ ไม่เห็นชอบ: ${rejectList.join(', ')}` : ''}${abstainList.length ? `<br>⚪ งดออกเสียง: ${abstainList.join(', ')}` : ''}</div>` : ''}
       <div style="margin-top:14px; padding-top:14px; border-top:1px solid var(--gray-100);">
         <div class="vote-title">💬 ความคิดเห็น (${comments.length})</div>
         <div class="comment-list">${commentsHtml || '<div style="color:var(--gray-400);font-size:13px;padding:8px 0;">ยังไม่มีความคิดเห็น</div>'}</div>
@@ -986,18 +971,11 @@ function castVote(postId, vote) {
   const post = posts.find(p => p.id === postId);
   if (!post) return;
   if (!post.votes) post.votes = {};
-  if (post.votes[currentUser.name] === vote) {
-    delete post.votes[currentUser.name]; // undo vote
-  } else {
-    post.votes[currentUser.name] = vote;
-  }
+  if (post.votes[currentUser.name] === vote) delete post.votes[currentUser.name];
+  else post.votes[currentUser.name] = vote;
   setDB('posts', posts);
   renderPosts();
-  // Re-open the vote section
-  setTimeout(() => {
-    const section = document.getElementById('vote-' + postId);
-    if (section) section.classList.add('open');
-  }, 50);
+  setTimeout(() => { const s = document.getElementById('vote-' + postId); if (s) s.classList.add('open'); }, 50);
   toast('✅ บันทึกมติเรียบร้อย');
 }
 
@@ -1013,10 +991,7 @@ function addComment(postId) {
   setDB('posts', posts);
   input.value = '';
   renderPosts();
-  setTimeout(() => {
-    const section = document.getElementById('vote-' + postId);
-    if (section) section.classList.add('open');
-  }, 50);
+  setTimeout(() => { const s = document.getElementById('vote-' + postId); if (s) s.classList.add('open'); }, 50);
 }
 
 function deletePost(postId) {
@@ -1029,10 +1004,7 @@ function deletePost(postId) {
   toast('🗑️ ลบกำหนดการเรียบร้อย');
 }
 
-function toggleSection(id) {
-  const el = document.getElementById(id);
-  el.classList.toggle('open');
-}
+function toggleSection(id) { document.getElementById(id).classList.toggle('open'); }
 
 // ============ CHAT ============
 function renderRooms() {
@@ -1040,11 +1012,13 @@ function renderRooms() {
   const messages = getDB('messages', {});
   const list = document.getElementById('room-list');
   list.innerHTML = rooms.map(r => {
-    const count = (messages[r.id] || []).length;
-    return `<div class="room-item ${currentRoom && currentRoom.id===r.id?'active':''}" onclick="selectRoom('${r.id}')">
+    const msgs = messages[r.id] || [];
+    const lastMsgNum = lastMsgCount[r.id] || 0;
+    const newCount = onPage === 'chat' && currentRoom && currentRoom.id === r.id ? 0 : Math.max(0, msgs.length - lastMsgNum);
+    return `<div class="room-item ${currentRoom && currentRoom.id===r.id ? 'active' : ''}" onclick="selectRoom('${r.id}')">
       <span class="room-icon">${r.icon}</span>
       <span class="room-name">${escHtml(r.name)}</span>
-      ${count > 0 ? `<span class="room-count">${count}</span>` : ''}
+      ${newCount > 0 ? `<span class="room-unread">${newCount}</span>` : ''}
     </div>`;
   }).join('');
 }
@@ -1056,33 +1030,58 @@ function selectRoom(roomId) {
   document.getElementById('chat-room-icon').textContent = currentRoom.icon;
   document.getElementById('chat-room-name').textContent = currentRoom.name;
   document.getElementById('chat-room-desc').textContent = currentRoom.desc || '';
+  document.getElementById('online-count').style.display = 'flex';
+
+  // Mark messages as read for this room
+  const messages = getDB('messages', {});
+  lastMsgCount[roomId] = (messages[roomId] || []).length;
+
+  replyTo = null;
+  document.getElementById('reply-bar').classList.remove('active');
   renderRooms();
-  renderMessages();
+  renderMessages(true);
 }
 
-function renderMessages() {
+function renderMessages(scrollDown = true) {
   if (!currentRoom) return;
   const messages = getDB('messages', {});
   const msgs = messages[currentRoom.id] || [];
   const container = document.getElementById('chat-messages');
-
   if (!msgs.length) {
     container.innerHTML = `<div class="empty-state"><span class="empty-icon">💬</span><h4>ยังไม่มีข้อความ</h4><p>เริ่มการสนทนาในห้องนี้ได้เลย</p></div>`;
     return;
   }
-
-  container.innerHTML = msgs.map(m => {
+  const users = getDB('users', {});
+  container.innerHTML = msgs.map((m, idx) => {
     const isOwn = currentUser && m.author === currentUser.name;
-    return `<div class="chat-msg ${isOwn?'own':''}">
+    const u = users[m.author] || {};
+    const roleTag = u.customRole ? `<span class="msg-role-tag">${escHtml(u.customRole)}</span>` :
+                    (u.role === 'admin' ? `<span class="msg-role-tag">Admin</span>` : '');
+    const replyHtml = m.replyTo ? `<div class="msg-reply-preview">↩️ ${escHtml(m.replyTo.author)}: ${escHtml(m.replyTo.text.slice(0,60))}${m.replyTo.text.length > 60 ? '...' : ''}</div>` : '';
+    const deleteBtn = (currentUser && currentUser.role === 'admin') ?
+      `<button class="msg-reply-btn" onclick="deleteMsg('${currentRoom.id}',${idx})" title="ลบ">🗑️</button>` : '';
+    return `<div class="chat-msg ${isOwn ? 'own' : ''}" id="msg-${idx}">
       <div class="msg-avatar">${m.author.charAt(0).toUpperCase()}</div>
       <div class="msg-content">
-        <div class="msg-name">${escHtml(m.author)}</div>
+        <div class="msg-name">${escHtml(m.author)}${roleTag}</div>
+        ${replyHtml}
         <div class="msg-bubble">${escHtml(m.text)}</div>
-        <div class="msg-time">${formatTime(m.createdAt)}</div>
+        <div class="msg-time">${formatTime(m.createdAt)} <button class="msg-reply-btn" onclick="setReply(${idx},'${escHtml(m.author).replace(/'/g,"\\'")}','${escHtml(m.text).replace(/'/g,"\\'")}')">↩️ ตอบ</button>${deleteBtn}</div>
       </div>
     </div>`;
   }).join('');
-  container.scrollTop = container.scrollHeight;
+  if (scrollDown) container.scrollTop = container.scrollHeight;
+}
+
+function setReply(idx, author, text) {
+  replyTo = { idx, author, text };
+  document.getElementById('reply-bar').classList.add('active');
+  document.getElementById('reply-bar-content').textContent = `${author}: ${text.slice(0,60)}`;
+  document.getElementById('chat-input').focus();
+}
+function cancelReply() {
+  replyTo = null;
+  document.getElementById('reply-bar').classList.remove('active');
 }
 
 function sendChat() {
@@ -1091,25 +1090,38 @@ function sendChat() {
   if (!text || !currentRoom) return;
   const messages = getDB('messages', {});
   if (!messages[currentRoom.id]) messages[currentRoom.id] = [];
-  messages[currentRoom.id].push({ author: currentUser.name, text, createdAt: new Date().toISOString() });
+  const msg = { author: currentUser.name, text, createdAt: new Date().toISOString() };
+  if (replyTo) msg.replyTo = { author: replyTo.author, text: replyTo.text };
+  messages[currentRoom.id].push(msg);
   setDB('messages', messages);
+  lastMsgCount[currentRoom.id] = messages[currentRoom.id].length;
   input.value = '';
-  renderMessages();
+  cancelReply();
+  renderMessages(true);
   renderRooms();
 }
 
-function openAddRoom() { openModal('modal-add-room'); }
-
-function selectEmoji(el, emoji) {
-  document.getElementById('room-icon-input').value = emoji;
+function deleteMsg(roomId, idx) {
+  if (!confirm('ต้องการลบข้อความนี้?')) return;
+  const messages = getDB('messages', {});
+  if (messages[roomId]) {
+    messages[roomId].splice(idx, 1);
+    setDB('messages', messages);
+    lastMsgCount[roomId] = messages[roomId].length;
+    renderMessages(false);
+    renderRooms();
+    toast('🗑️ ลบข้อความแล้ว');
+  }
 }
+
+function openAddRoom() { openModal('modal-add-room'); }
+function selectEmoji(emoji) { document.getElementById('room-icon-input').value = emoji; }
 
 function submitRoom() {
   const name = document.getElementById('room-name-input').value.trim();
   const icon = document.getElementById('room-icon-input').value.trim() || '💬';
   const desc = document.getElementById('room-desc-input').value.trim();
   if (!name) { toast('⚠️ กรุณาระบุชื่อห้อง'); return; }
-
   const rooms = getDB('rooms', []);
   rooms.push({ id: 'r' + Date.now(), icon, name, desc });
   setDB('rooms', rooms);
@@ -1132,23 +1144,40 @@ function renderAdmin() {
     <div class="admin-stat"><div class="stat-icon">📋</div><div class="stat-num">${posts.length}</div><div class="stat-label">กำหนดการทั้งหมด</div></div>
     <div class="admin-stat"><div class="stat-icon">👥</div><div class="stat-num">${Object.keys(users).length}</div><div class="stat-label">ผู้ใช้งานทั้งหมด</div></div>
     <div class="admin-stat"><div class="stat-icon">💬</div><div class="stat-num">${rooms.length}</div><div class="stat-label">ห้องสนทนา</div></div>
-    <div class="admin-stat"><div class="stat-icon">📨</div><div class="stat-num">${totalMsgs}</div><div class="stat-label">ข้อความทั้งหมด</div></div>
-  `;
+    <div class="admin-stat"><div class="stat-icon">📨</div><div class="stat-num">${totalMsgs}</div><div class="stat-label">ข้อความทั้งหมด</div></div>`;
 
   const usersArr = Object.values(users);
   document.getElementById('admin-users-table').innerHTML = usersArr.length ?
-    usersArr.map((u, i) => `<tr>
-      <td>${i+1}</td>
-      <td><strong>${escHtml(u.name)}</strong></td>
-      <td><span class="role-badge ${u.role}">${u.role === 'admin' ? '👑 Admin' : '👤 สมาชิก'}</span></td>
-      <td>${formatTime(u.lastLogin)}</td>
-    </tr>`).join('') :
-    '<tr><td colspan="4" style="text-align:center;color:var(--gray-400);padding:20px;">ยังไม่มีข้อมูลผู้ใช้</td></tr>';
+    usersArr.map((u, i) => {
+      const isSelf = currentUser && u.name === currentUser.name;
+      const roleDisplay = u.role === 'admin' ? `<span class="role-badge admin">👑 Admin</span>` :
+        (u.customRole ? `<span class="role-badge custom">${escHtml(u.customRole)}</span>` :
+          `<span class="role-badge member">👤 สมาชิก</span>`);
+
+      const roleEditor = u.role !== 'admin' ? `
+        <div class="role-edit-wrap" id="role-wrap-${escHtml(u.name).replace(/\s/g,'_')}">
+          <input class="role-edit-input" id="role-input-${i}" value="${escHtml(u.customRole || '')}" placeholder="ระบุตำแหน่ง...">
+          <button class="btn-save-role" onclick="saveUserRole('${escHtml(u.name)}', ${i})">💾 บันทึก</button>
+        </div>` : `<span style="font-size:12px;color:var(--gray-400);">-</span>`;
+
+      const deleteBtn = !isSelf ? `<button class="btn btn-xs btn-danger" onclick="deleteUser('${escHtml(u.name)}')">🗑️</button>` : '';
+      const makeAdminBtn = u.role !== 'admin' ? `<button class="btn btn-xs btn-navy" onclick="toggleAdminRole('${escHtml(u.name)}')">👑</button>` :
+        (isSelf ? '' : `<button class="btn btn-xs btn-outline" onclick="toggleAdminRole('${escHtml(u.name)}')">⬇️</button>`);
+
+      return `<tr>
+        <td>${i+1}</td>
+        <td><strong>${escHtml(u.name)}</strong>${isSelf ? ' <span style="font-size:11px;color:var(--gold);font-weight:600;">(คุณ)</span>' : ''}</td>
+        <td>${roleDisplay}</td>
+        <td>${roleEditor}</td>
+        <td>${formatTime(u.lastLogin)}</td>
+        <td style="display:flex;gap:4px;align-items:center;">${makeAdminBtn} ${deleteBtn}</td>
+      </tr>`;
+    }).join('') :
+    '<tr><td colspan="6" style="text-align:center;color:var(--gray-400);padding:20px;">ยังไม่มีข้อมูลผู้ใช้</td></tr>';
 
   document.getElementById('admin-posts-table').innerHTML = posts.length ?
     posts.map((p, i) => {
-      const votes = p.votes || {};
-      const vCount = Object.keys(votes).length;
+      const vCount = Object.keys(p.votes || {}).length;
       return `<tr>
         <td>${i+1}</td>
         <td><strong>${escHtml(p.title)}</strong></td>
@@ -1159,6 +1188,45 @@ function renderAdmin() {
       </tr>`;
     }).join('') :
     '<tr><td colspan="6" style="text-align:center;color:var(--gray-400);padding:20px;">ยังไม่มีกำหนดการ</td></tr>';
+}
+
+function saveUserRole(userName, idx) {
+  const input = document.getElementById('role-input-' + idx);
+  const newRole = input.value.trim();
+  const users = getDB('users', {});
+  if (!users[userName]) return;
+  users[userName].customRole = newRole || null;
+  setDB('users', users);
+  // Update header if this is current user
+  if (currentUser && currentUser.name === userName) {
+    currentUser.customRole = newRole || null;
+    updateHeader();
+  }
+  renderAdmin();
+  toast(`✅ บันทึกตำแหน่ง "${escHtml(userName)}" เป็น "${newRole || 'สมาชิก'}" แล้ว`);
+}
+
+function toggleAdminRole(userName) {
+  if (userName === currentUser.name) { toast('⚠️ ไม่สามารถเปลี่ยนบทบาทของตนเองได้'); return; }
+  const users = getDB('users', {});
+  if (!users[userName]) return;
+  const current = users[userName].role;
+  const newRole = current === 'admin' ? 'member' : 'admin';
+  users[userName].role = newRole;
+  if (newRole === 'admin') users[userName].customRole = null;
+  setDB('users', users);
+  renderAdmin();
+  toast(`✅ เปลี่ยนบทบาท "${userName}" เป็น ${newRole === 'admin' ? 'Admin' : 'สมาชิก'} แล้ว`);
+}
+
+function deleteUser(userName) {
+  if (userName === currentUser.name) { toast('⚠️ ไม่สามารถลบบัญชีตนเองได้'); return; }
+  if (!confirm(`ต้องการลบผู้ใช้ "${userName}" ออกจากระบบ?`)) return;
+  const users = getDB('users', {});
+  delete users[userName];
+  setDB('users', users);
+  renderAdmin();
+  toast(`🗑️ ลบผู้ใช้ "${userName}" เรียบร้อย`);
 }
 
 // ============ MODAL ============
@@ -1173,8 +1241,7 @@ function toast(msg) {
   const old = document.querySelector('.toast');
   if (old) old.remove();
   const t = document.createElement('div');
-  t.className = 'toast';
-  t.textContent = msg;
+  t.className = 'toast'; t.textContent = msg;
   document.body.appendChild(t);
   setTimeout(() => t.remove(), 2800);
 }
@@ -1194,6 +1261,14 @@ function formatTime(iso) {
 initData();
 document.getElementById('screen-login').style.display = 'flex';
 document.getElementById('screen-app').style.display = 'none';
+
+// Try to restore session
+if (!restoreSession()) {
+  // no session, show login
+}
+
+// Mark offline on window close
+window.addEventListener('beforeunload', markOffline);
 </script>
 </body>
 </html>
